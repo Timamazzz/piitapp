@@ -2,6 +2,7 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {SCREENS} from '../screenName';
 import CreditsScreen from '../../screens/Credits/CreditscScreen/CreditsScreen';
+import NewsScreen from '../../screens/News/NewsScreen/NewsScreen';
 import ScheduleScreen from '../../screens/Schedule/ScheduleScreen/ScheduleScreen';
 
 // @ts-ignore
@@ -11,6 +12,11 @@ export const CommonNavigator = () => {
   return (
     <>
       <CommonStack.Navigator initialRouteName="App">
+        <CommonStack.Screen
+          name={SCREENS.News}
+          component={NewsScreen}
+          options={{headerShown: false}}
+        />
         <CommonStack.Screen
           name={SCREENS.Credits}
           component={CreditsScreen}
