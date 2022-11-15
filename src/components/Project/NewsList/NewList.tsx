@@ -25,6 +25,27 @@ const data = [
         username: 'Иван Иванов', 
         nickname: '@nickname',
         image: 'https://bgtu-nvrsk.ru/uploads/5fbcd0838cb3cdoc1724348512/5fbcd08430154.jpg'
+    },
+    {
+        id: '4',
+        avatar: backgroundImage, 
+        username: 'Иван Иванов', 
+        nickname: '@nickname',
+        image: 'https://bgtu-nvrsk.ru/uploads/5fbcd0838cb3cdoc1724348512/5fbcd08430154.jpg'
+    },
+    {
+        id: '5',
+        avatar: backgroundImage, 
+        username: 'Иван Иванов', 
+        nickname: '@nickname',
+        image: 'https://bgtu-nvrsk.ru/uploads/5fbcd0838cb3cdoc1724348512/5fbcd08430154.jpg'
+    },
+    {
+        id: '6',
+        avatar: backgroundImage, 
+        username: 'Иван Иванов', 
+        nickname: '@nickname',
+        image: 'https://bgtu-nvrsk.ru/uploads/5fbcd0838cb3cdoc1724348512/5fbcd08430154.jpg'
     }
 ]
 
