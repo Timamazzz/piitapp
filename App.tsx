@@ -10,12 +10,15 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 // @ts-ignore
 import type {Node} from 'react';
-import CommonNavigator from './src/navigation/CommonNavigator/CommonNavigator';
+import BottomTabNavigator from './src/navigation/BottomTabNavigator/BottomTabNavigator';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
 const App: () => Node = () => {
   return (
     <NavigationContainer>
-      <CommonNavigator />
+      <GestureHandlerRootView style={{flex: 1}}>
+        <BottomTabNavigator />
+      </GestureHandlerRootView>
     </NavigationContainer>
   );
 };
