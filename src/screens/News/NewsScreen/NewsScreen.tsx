@@ -1,9 +1,9 @@
 import React, {useRef} from 'react';
-import {ImageBackground, Text, View} from 'react-native';
+import {Image, ImageBackground, Text, View} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {Modalize} from 'react-native-modalize';
 import NewsList from '../../../components/Project/NewsList/NewList';
-import {backgroundImage, blurImage} from '../../../constants/images';
+import {backgroundImage, blurImage, dots} from '../../../constants/images';
 import styles from './styles';
 import {globalStyles, SCREEN_HEIGHT} from '../../../constants/globalStyles';
 
@@ -17,7 +17,7 @@ const NewsScreen = () => {
           <Text style={globalStyles.grayText}>Новости</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.headerItem}>
-          <Text style={globalStyles.grayText}>...</Text>
+          <Image source={dots} style={styles.headerButton} />
         </TouchableOpacity>
       </View>
       <ImageBackground
