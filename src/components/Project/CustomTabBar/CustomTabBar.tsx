@@ -11,23 +11,11 @@ interface ICustomTabBar {
   [x: string]: any;
 }
 
-const CustomTabBar: FC<ICustomTabBar> = ({
-  state,
-  descriptors,
-  navigation,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  ...props
-}) => {
+const CustomTabBar: FC<ICustomTabBar> = ({state, descriptors, navigation}) => {
   return (
     <View style={styles.tabBarContainer}>
       {state.routes.map((route: any, index: number) => {
         const {options} = descriptors[route.key];
-        /*        let label =
-          options.tabBarLabel !== undefined
-            ? options.tabBarLabel
-            : options.title !== undefined
-            ? options.title
-            : route.name;*/
         const isFocused = state.index === index;
         let iconName;
         switch (route.name) {
@@ -38,6 +26,9 @@ const CustomTabBar: FC<ICustomTabBar> = ({
             iconName = catalogueActiveIcon;
             break;
           case SCREENS.Schedule:
+            iconName = catalogueActiveIcon;
+            break;
+          case SCREENS.Profile:
             iconName = catalogueActiveIcon;
             break;
           default:
@@ -70,9 +61,6 @@ const CustomTabBar: FC<ICustomTabBar> = ({
                 style={[styles.tabBarIcon]}
                 resizeMode="contain"
               />
-              {/*
-              {isFocused && <Text style={[styles.label]}>{label}</Text>}
-*/}
             </View>
           </TouchableOpacity>
         );

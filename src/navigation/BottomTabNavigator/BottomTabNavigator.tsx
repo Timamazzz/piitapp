@@ -8,13 +8,13 @@ import NewsScreen from '../../screens/News/NewsScreen/NewsScreen';
 import CreditsScreen from '../../screens/Credits/CreditscScreen/CreditsScreen';
 import ScheduleScreen from '../../screens/Schedule/ScheduleScreen/ScheduleScreen';
 import CustomTabBar from '../../components/Project/CustomTabBar/CustomTabBar';
+import ProfileScreen from '../../screens/Profile/ProfileScreen/ProfileScreen';
 
 const Tab = createBottomTabNavigator();
 const tabScreenOptions: BottomTabNavigationOptions = {
   headerShown: false,
   tabBarAllowFontScaling: true,
   tabBarHideOnKeyboard: true,
-  tabBarStyle: {display: 'none'},
 };
 
 /*// eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -29,10 +29,8 @@ function NewsStack(props: any) {
     </Tab.Navigator>
   );
 }*/
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function BottomTabNavigator(props: any) {
+function BottomTabNavigator() {
   return (
-    // eslint-disable-next-line @typescript-eslint/no-shadow
     <Tab.Navigator tabBar={(props: any) => <CustomTabBar {...props} />}>
       <Tab.Screen
         name={SCREENS.News}
@@ -47,6 +45,11 @@ function BottomTabNavigator(props: any) {
       <Tab.Screen
         name={SCREENS.Schedule}
         component={ScheduleScreen}
+        options={tabScreenOptions}
+      />
+      <Tab.Screen
+        name={SCREENS.Profile}
+        component={ProfileScreen}
         options={tabScreenOptions}
       />
     </Tab.Navigator>
