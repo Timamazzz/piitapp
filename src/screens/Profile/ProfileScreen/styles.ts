@@ -1,13 +1,13 @@
 import {StyleSheet} from 'react-native';
 import {colors} from '../../../constants/colors';
+import {SCREEN_WIDTH} from '../../../constants/globalStyles';
 
 const styles = StyleSheet.create({
-  container: {
+  background: {
     flex: 1,
-  },
-  images: {
-    flex: 1,
-    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
   },
   header: {
     flexDirection: 'row',
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 50,
     padding: 10,
-    minWidth: 40,
+    width: 40,
     height: 40,
   },
   headerButton: {
@@ -32,35 +32,38 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
-  welcomeContainer: {
-    backgroundColor: '#fff',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 50,
-    padding: 10,
-    paddingHorizontal: 20,
-    position: 'absolute',
-    top: 80,
-    alignSelf: 'center',
-  },
-  preModalViewContainer: {
+  images: {
     flex: 1,
-    borderTopRightRadius: 50,
-    overflow: 'hidden',
-    borderTopLeftRadius: 50,
+    justifyContent: 'center',
   },
   modalStyle: {
     borderTopRightRadius: 50,
     overflow: 'hidden',
     borderTopLeftRadius: 50,
-    backgroundColor: 'rgba(255,255,255,0)',
   },
-  modalOverlay: {backgroundColor: colors.transparent},
-  zIndexOne: {
-    zIndex: 1,
+  modalContent: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    margin: 10,
   },
-  opacityBlur: {
-    opacity: 0.4,
+  avatar: {
+    width: SCREEN_WIDTH * 0.3,
+    height: SCREEN_WIDTH * 0.3,
+    borderRadius: 60,
+    resizeMode: 'contain',
+    borderWidth: 5,
+    borderColor: colors.black,
+  },
+  list: {
+    width: SCREEN_WIDTH,
+    paddingHorizontal: '10%',
+  },
+  listItem: {
+    borderWidth: 1,
+    borderColor: colors.grey,
+    marginVertical: '4.5%',
+    padding: '5%',
+    borderRadius: 25,
   },
 });
 
