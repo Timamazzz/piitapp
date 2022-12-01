@@ -2,6 +2,7 @@ import React from 'react';
 import {Text, View} from 'react-native';
 import {globalStyles} from '../../../constants/globalStyles';
 import styles from './styles';
+import ScheduleList from '../../../components/Project/ScheduleList/ScheduleList';
 
 const ScheduleScreen = () => {
   return (
@@ -23,6 +24,7 @@ const ScheduleScreen = () => {
           <Text style={[globalStyles.grayText]}>Числитель</Text>
         </View>
       </View>
+      <ScheduleList />
     </View>
   );
 };
