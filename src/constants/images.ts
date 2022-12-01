@@ -6,3 +6,5 @@ export const dots = require('../assets/images/dots.png');
 
 //Tab
 export const catalogueActiveIcon = require('../assets/images/TabIcons/catalogueActiveIcon.png');
+
+export const fingerIcon = require('../assets/images/finger.png');
