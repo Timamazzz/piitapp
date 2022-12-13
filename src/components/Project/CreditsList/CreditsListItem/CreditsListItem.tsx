@@ -1,16 +1,21 @@
 import React, {FC} from 'react';
-import {Image, Text, View} from 'react-native';
+import {Image, Text, TouchableOpacity, View} from 'react-native';
 import styles from './styles';
 import {globalStyles, SCREEN_WIDTH} from '../../../../constants/globalStyles';
 import {fingerIcon} from '../../../../constants/images';
 
 interface INewsListItem {
   data: any;
+  openModal: any;
 }
 
-const CreditsListItem: FC<INewsListItem> = ({data}) => {
+const CreditsListItem: FC<INewsListItem> = ({
+  data,
+  openModal = () => {},
+  ...props
+}) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={() => openModal()}>
       <Text style={[globalStyles.grayText, globalStyles.bigText]}>
         {data.subject}
       </Text>
@@ -40,7 +45,7 @@ const CreditsListItem: FC<INewsListItem> = ({data}) => {
           source={fingerIcon}
         />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

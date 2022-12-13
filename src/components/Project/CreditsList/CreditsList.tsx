@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {FlatList} from 'react-native';
 import CreditsListItem from './CreditsListItem/CreditsListItem';
 
@@ -20,11 +20,18 @@ const data = [
   },
 ];
 
-const _renderItem = ({item, index}: {item: any; index: number}) => {
-  return <CreditsListItem data={item} />;
+type ICreditsListProps = {
+  openModal: () => void;
 };
 
-const CreditsList = () => {
+const CreditsList: FC<ICreditsListProps> = ({
+  openModal = () => {},
+  ...props
+}) => {
+  const _renderItem = ({item, index}: {item: any; index: number}) => {
+    return <CreditsListItem data={item} openModal={openModal} />;
+  };
+
   return <FlatList data={data} renderItem={_renderItem} />;
 };
 

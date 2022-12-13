@@ -3,10 +3,11 @@ import {Text, View} from 'react-native';
 import {globalStyles} from '../../../constants/globalStyles';
 import styles from './styles';
 import ScheduleList from '../../../components/Project/ScheduleList/ScheduleList';
+import {colors} from '../../../constants/colors';
 
 const ScheduleScreen = () => {
   return (
-    <View style={[globalStyles.flexOne, {backgroundColor:'#EEF0F5'}]}>
+    <View style={[globalStyles.flexOne, {backgroundColor: colors.newWhite}]}>
       <View style={styles.header}>
         <View>
           <Text

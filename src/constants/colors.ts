@@ -9,4 +9,5 @@ export const colors = {
   transparent: 'rgba(0,0,0,0)',
   modalGrey: '#F8F8F8',
   lightBlue: '#80B2FF',
+  newWhite: '#EEF0F5',
 };
