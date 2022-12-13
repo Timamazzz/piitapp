@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 import {Image, ImageBackground, Text, View} from 'react-native';
-import {globalStyles, SCREEN_HEIGHT} from '../../../constants/globalStyles';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import {globalStyles, SCREEN_HEIGHT, SCREEN_WIDTH} from '../../../constants/globalStyles';
+import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 import {
   avatar,
   backButton,
@@ -12,7 +12,7 @@ import {
 import {Modalize} from 'react-native-modalize';
 import styles from './styles';
 
-const ProfileScreen = () => {
+const ProfileScreen = ({navigation}) => {
   const modalizeRef = useRef<Modalize>(null);
   modalizeRef.current?.open();
   return (
@@ -25,48 +25,24 @@ const ProfileScreen = () => {
           <Image source={dots} style={styles.headerButton} />
         </TouchableOpacity>
   </View>*/}
-  
-      <Modalize
-        ref={modalizeRef}
-        modalStyle={styles.modalStyle}
-        alwaysOpen={SCREEN_HEIGHT * 0.8}
-        modalHeight={SCREEN_HEIGHT * 0.9}
-        withOverlay={false}
-        panGestureEnabled={false}>
-           <ImageBackground
-              style={styles.images}
-              resizeMode="cover"
-              source={backgroundImage}
-              blurRadius={50}>
-              <ImageBackground
-                style={[globalStyles.flexOne, styles.zIndexOne]}
-                resizeMode="cover"
-                source={blurImage}
-                imageStyle={styles.opacityBlur}>
-
-                <View>
-                  <Image style={styles.avatar} source={avatar} />
-                  <Text
-                    style={[
-                      globalStyles.blackText,
-                      globalStyles.boldText,
-                      globalStyles.bigText,
-                    ]}>
-                    Имя пользователя
-                  </Text>
-                  <Text style={[globalStyles.grayText]}>@nickname</Text>
-                  <View style={styles.list}>
-                    <TouchableOpacity style={styles.listItem}>
+        <View style={{marginTop: '40%'}}>
+          <View style={{position:'absolute', top: -55, alignSelf: 'center', justifyContent: 'center', alignItems: 'center', zIndex: 100}}>
+                      <Image style={styles.avatar} source={avatar} />
                       <Text
                         style={[
-                          globalStyles.grayText,
+                          globalStyles.blackText,
                           globalStyles.boldText,
-                          {fontSize: 14}
+                          globalStyles.bigText,
                         ]}>
-                        Аттестация
+                        Имя пользователя
                       </Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.listItem}>
+                      <Text style={[globalStyles.grayText]}>@nickname</Text>
+          </View>
+      <View
+        style={[styles.modalStyle]}>          
+                  <View style={[styles.list, {marginTop: 130}]}>
+                    <TouchableOpacity style={styles.listItem} onPress={()=>{navigation.navigate('CreditsScreen')}}>
+                      <View style={{width: '100%', backgroundColor: 'red', position: 'absolute', bottom: -10}}></View>
                       <Text
                         style={[
                           globalStyles.grayText,
@@ -76,7 +52,8 @@ const ProfileScreen = () => {
                         Моя сессия
                       </Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.listItem}>
+                    <TouchableOpacity style={styles.listItem} onPress={()=>{navigation.navigate('')}}>
+                      <View style={{width: '100%', backgroundColor: 'red', position: 'absolute', bottom: -10}}></View>
                       <Text
                         style={[
                           globalStyles.grayText,
@@ -86,7 +63,8 @@ const ProfileScreen = () => {
                         Оформление хвостовок
                       </Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.listItem}>
+                    <TouchableOpacity style={styles.listItem} onPress={()=>{navigation.navigate('')}}>
+                      <View style={{width: '100%', backgroundColor: 'red', position: 'absolute', bottom: -10}}></View>
                       <Text
                         style={[
                           globalStyles.grayText,
@@ -97,13 +75,12 @@ const ProfileScreen = () => {
                       </Text>
                     </TouchableOpacity>
                     
+                    
                   </View>
                 </View>
 
-              </ImageBackground>
-            </ImageBackground>
        
-      </Modalize>
+      </View>
     </ImageBackground>
   );
 };

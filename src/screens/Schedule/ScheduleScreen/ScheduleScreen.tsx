@@ -6,7 +6,7 @@ import ScheduleList from '../../../components/Project/ScheduleList/ScheduleList'
 
 const ScheduleScreen = () => {
   return (
-    <View style={globalStyles.flexOne}>
+    <View style={[globalStyles.flexOne, {backgroundColor:'#EEF0F5'}]}>
       <View style={styles.header}>
         <View>
           <Text
