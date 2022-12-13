@@ -1,6 +1,6 @@
-import {StyleSheet} from 'react-native';
-import {SCREEN_HEIGHT, SCREEN_WIDTH} from '../../../constants/globalStyles';
-import {colors} from '../../../constants/colors';
+import { StyleSheet } from 'react-native';
+import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../../../constants/globalStyles';
+import { colors } from '../../../constants/colors';
 
 const styles = StyleSheet.create({
   tabBarContainer: {
@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   tabBarIcon: {
-    height: SCREEN_WIDTH * 0.07,
-    width: SCREEN_WIDTH * 0.07,
+    height: SCREEN_WIDTH * 0.05,
+    width: SCREEN_WIDTH * 0.05,
   },
   disabledTab: {
     opacity: 0.5,

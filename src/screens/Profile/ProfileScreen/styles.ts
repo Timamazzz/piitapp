@@ -1,6 +1,6 @@
-import {StyleSheet} from 'react-native';
-import {colors} from '../../../constants/colors';
-import {SCREEN_WIDTH} from '../../../constants/globalStyles';
+import { StyleSheet } from 'react-native';
+import { colors } from '../../../constants/colors';
+import { SCREEN_WIDTH } from '../../../constants/globalStyles';
 
 const styles = StyleSheet.create({
   background: {
@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
     padding: 15,
   },
   headerItem: {
-    backgroundColor: colors.white,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 50,
@@ -59,11 +58,22 @@ const styles = StyleSheet.create({
     paddingHorizontal: '10%',
   },
   listItem: {
-    borderWidth: 1,
-    borderColor: colors.grey,
-    marginVertical: '4.5%',
+    marginTop: '4.5%',
     padding: '5%',
     borderRadius: 25,
+    backgroundColor: colors.white
+  },
+  preModalViewContainer: {
+    flex: 1,
+    borderTopRightRadius: 50,
+    overflow: 'hidden',
+    borderTopLeftRadius: 50,
+  },
+  zIndexOne: {
+    zIndex: 1,
+  },
+  opacityBlur: {
+    opacity: 0.4,
   },
 });
 

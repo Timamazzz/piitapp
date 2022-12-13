@@ -1,8 +1,8 @@
 import React from 'react';
 import {Text, View} from 'react-native';
+import CreditsList from '../../../components/Project/CreditsList/CreditsList';
 import {globalStyles} from '../../../constants/globalStyles';
 import styles from './styles';
-import CreditsList from '../../../components/Project/CreditsList/CreditsList';
 
 const CreditsScreen = () => {
   return (
