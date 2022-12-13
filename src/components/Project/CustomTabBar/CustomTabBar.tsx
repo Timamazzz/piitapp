@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import {Image, TouchableOpacity, View} from 'react-native';
 import {SCREENS} from '../../../navigation/screenName';
 import styles from './style';
-import {catalogueActiveIcon} from '../../../constants/images';
+import {calendarActiveIcon, catalogueActiveIcon, newsActiveIcon, orderActiveIcon, userActiveIcon} from '../../../constants/images';
 
 interface ICustomTabBar {
   state: any;
@@ -20,16 +20,16 @@ const CustomTabBar: FC<ICustomTabBar> = ({state, descriptors, navigation}) => {
         let iconName;
         switch (route.name) {
           case SCREENS.News:
-            iconName = catalogueActiveIcon;
+            iconName = newsActiveIcon;
             break;
           case SCREENS.Credits:
-            iconName = catalogueActiveIcon;
+            iconName = orderActiveIcon;
             break;
           case SCREENS.Schedule:
-            iconName = catalogueActiveIcon;
+            iconName = calendarActiveIcon;
             break;
           case SCREENS.Profile:
-            iconName = catalogueActiveIcon;
+            iconName = userActiveIcon;
             break;
           default:
             break;
