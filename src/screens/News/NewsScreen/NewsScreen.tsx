@@ -10,10 +10,13 @@ import {globalStyles, SCREEN_HEIGHT} from '../../../constants/globalStyles';
 const NewsScreen = () => {
   const modalizeRef = useRef<Modalize>(null);
   modalizeRef.current?.open();
+  const newsPress = () => {
+    modalizeRef.current?.close('alwaysOpen');
+  };
   return (
     <View style={globalStyles.flexOne}>
       <View style={styles.header}>
-        <TouchableOpacity style={styles.headerItem}>
+        <TouchableOpacity style={styles.headerItem} onPress={() => newsPress()}>
           <Text style={globalStyles.grayText}>Новости</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.headerItem}>
