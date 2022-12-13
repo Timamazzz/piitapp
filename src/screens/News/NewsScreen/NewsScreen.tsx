@@ -31,7 +31,7 @@ const NewsScreen = () => {
           <Modalize
             ref={modalizeRef}
             modalStyle={styles.modalStyle}
-            alwaysOpen={SCREEN_HEIGHT * 0.8}
+            alwaysOpen={SCREEN_HEIGHT-170}
             modalHeight={SCREEN_HEIGHT * 0.9}
             overlayStyle={styles.modalOverlay}>
             <ImageBackground

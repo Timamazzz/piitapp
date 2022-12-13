@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {colors} from '../../../constants/colors';
+import { StyleSheet } from 'react-native';
+import { colors } from '../../../constants/colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 50,
     backgroundColor: 'rgba(255,255,255,0)',
   },
-  modalOverlay: {backgroundColor: colors.transparent},
+  modalOverlay: { backgroundColor: colors.transparent },
   zIndexOne: {
     zIndex: 1,
   },

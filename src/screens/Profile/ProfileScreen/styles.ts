@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { colors } from '../../../constants/colors';
-import { SCREEN_WIDTH } from '../../../constants/globalStyles';
+import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../../../constants/globalStyles';
 
 const styles = StyleSheet.create({
   background: {
@@ -37,8 +37,11 @@ const styles = StyleSheet.create({
   },
   modalStyle: {
     borderTopRightRadius: 50,
-    overflow: 'hidden',
+    backgroundColor: '#EEF0F5',
     borderTopLeftRadius: 50,
+    height: SCREEN_HEIGHT,
+    borderWidth: 3,
+    borderColor: colors.white
   },
   modalContent: {
     flexDirection: 'column',
@@ -50,8 +53,8 @@ const styles = StyleSheet.create({
     height: SCREEN_WIDTH * 0.3,
     borderRadius: 60,
     resizeMode: 'contain',
-    borderWidth: 5,
-    borderColor: colors.black,
+    borderWidth: 3,
+    borderColor: colors.white,
   },
   list: {
     width: SCREEN_WIDTH,
@@ -62,18 +65,6 @@ const styles = StyleSheet.create({
     padding: '5%',
     borderRadius: 25,
     backgroundColor: colors.white
-  },
-  preModalViewContainer: {
-    flex: 1,
-    borderTopRightRadius: 50,
-    overflow: 'hidden',
-    borderTopLeftRadius: 50,
-  },
-  zIndexOne: {
-    zIndex: 1,
-  },
-  opacityBlur: {
-    opacity: 0.4,
   },
 });
 
