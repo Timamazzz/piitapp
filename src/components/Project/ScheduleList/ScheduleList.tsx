@@ -37,7 +37,39 @@ const data = [
     place: 'Гук 402',
     teacher: 'ФИО',
     time: '10:00-20:00',
-  },
+  }
+  ,
+  {
+    id: '5',
+    subject: 'ИТ',
+    place: 'Гук 402',
+    teacher: 'ФИО',
+    time: '10:00-20:00',
+  }
+  ,
+  {
+    id: '5',
+    subject: 'ИТ',
+    place: 'Гук 402',
+    teacher: 'ФИО',
+    time: '10:00-20:00',
+  }
+  ,
+  {
+    id: '5',
+    subject: 'ИТ',
+    place: 'Гук 402',
+    teacher: 'ФИО',
+    time: '10:00-20:00',
+  }
+  ,
+  {
+    id: '5',
+    subject: 'ИТ',
+    place: 'Гук 402',
+    teacher: 'ФИО',
+    time: '10:00-20:00',
+  }
 ];
 
 const _renderItem = ({item, index}: {item: any; index: number}) => {
@@ -45,7 +77,7 @@ const _renderItem = ({item, index}: {item: any; index: number}) => {
 };
 
 const ScheduleList = () => {
-  return <FlatList data={data} renderItem={_renderItem} />;
+  return <FlatList data={data} renderItem={_renderItem} style={{marginBottom: 50}}/>;
 };
 
 export default ScheduleList;

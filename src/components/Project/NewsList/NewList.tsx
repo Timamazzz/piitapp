@@ -57,7 +57,7 @@ const _renderItem = ({item, index}: {item: any; index: number}) => {
 };
 
 const NewsList = () => {
-  return <FlatList data={data} renderItem={_renderItem} />;
+  return <FlatList data={data} renderItem={_renderItem} style={{marginBottom: 50}} />;
 };
 
 export default NewsList;
