@@ -9,6 +9,7 @@ import CreditsScreen from '../../screens/Credits/CreditscScreen/CreditsScreen';
 import ScheduleScreen from '../../screens/Schedule/ScheduleScreen/ScheduleScreen';
 import CustomTabBar from '../../components/Project/CustomTabBar/CustomTabBar';
 import ProfileScreen from '../../screens/Profile/ProfileScreen/ProfileScreen';
+import DebtsScreen from '../../screens/Profile/DebtsScreen/DebtsScreen';
 
 const Tab = createBottomTabNavigator();
 const tabScreenOptions: BottomTabNavigationOptions = {
@@ -17,18 +18,22 @@ const tabScreenOptions: BottomTabNavigationOptions = {
   tabBarHideOnKeyboard: true,
 };
 
-/*// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function NewsStack(props: any) {
+function ProfileStack(props: any) {
   return (
-    <Tab.Navigator initialRouteName={SCREENS.News}>
+    <Tab.Navigator initialRouteName={SCREENS.Profile}>
       <Tab.Screen
-        name={SCREENS.News}
-        component={NewsScreen}
+        name={SCREENS.Profile}
+        component={ProfileScreen}
+        options={tabScreenOptions}
+      />
+      <Tab.Screen
+        name={SCREENS.Debt}
+        component={DebtsScreen}
         options={tabScreenOptions}
       />
     </Tab.Navigator>
   );
-}*/
+}
 function BottomTabNavigator() {
   return (
     <Tab.Navigator tabBar={(props: any) => <CustomTabBar {...props} />}>
@@ -49,7 +54,7 @@ function BottomTabNavigator() {
       />
       <Tab.Screen
         name={SCREENS.Profile}
-        component={ProfileScreen}
+        component={ProfileStack}
         options={tabScreenOptions}
       />
     </Tab.Navigator>

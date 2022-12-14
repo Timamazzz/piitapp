@@ -12,3 +12,4 @@ export const orderActiveIcon = require('../assets/images/TabIcons/order.png');
 export const calendarActiveIcon = require('../assets/images/TabIcons/calendar.png');
 
 export const fingerIcon = require('../assets/images/finger.png');
+export const debtImage = require('../assets/images/debt.png');
