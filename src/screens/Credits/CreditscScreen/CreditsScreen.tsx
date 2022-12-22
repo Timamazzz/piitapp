@@ -98,7 +98,7 @@ const CreditsScreen = () => {
                 globalStyles.bigText,
                 globalStyles.boldText,
               ]}>
-              Зачёты
+              Успеваемость
             </Text>
             <Text style={[globalStyles.grayText, {fontSize: 24}]}>...</Text>
           </View>
