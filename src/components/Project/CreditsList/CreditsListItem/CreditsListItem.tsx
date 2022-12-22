@@ -6,7 +6,7 @@ import {fingerIcon} from '../../../../constants/images';
 
 interface INewsListItem {
   data: any;
-  openModal: any;
+  openModal: (credit: any) => void;
 }
 
 const CreditsListItem: FC<INewsListItem> = ({
@@ -15,7 +15,7 @@ const CreditsListItem: FC<INewsListItem> = ({
   ...props
 }) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={() => openModal()}>
+    <TouchableOpacity style={styles.container} onPress={() => openModal(data)}>
       <Text style={[globalStyles.grayText, globalStyles.bigText]}>
         {data.subject}
       </Text>

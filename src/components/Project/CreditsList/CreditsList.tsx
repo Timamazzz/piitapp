@@ -1,27 +1,10 @@
 import React, {FC} from 'react';
 import {FlatList} from 'react-native';
 import CreditsListItem from './CreditsListItem/CreditsListItem';
-
-const data = [
-  {
-    id: '1',
-    mark: '5',
-    subject: 'ИТ',
-  },
-  {
-    id: '2',
-    mark: 'Зачет',
-    subject: 'Типис',
-  },
-  {
-    id: '3',
-    mark: 'Не зачет',
-    subject: 'Пи',
-  },
-];
+import {creditsData} from '../../../constants/database';
 
 type ICreditsListProps = {
-  openModal: () => void;
+  openModal: (credit: any) => void;
 };
 
 const CreditsList: FC<ICreditsListProps> = ({
@@ -32,7 +15,7 @@ const CreditsList: FC<ICreditsListProps> = ({
     return <CreditsListItem data={item} openModal={openModal} />;
   };
 
-  return <FlatList data={data} renderItem={_renderItem} />;
+  return <FlatList data={creditsData} renderItem={_renderItem} />;
 };
 
 export default CreditsList;
