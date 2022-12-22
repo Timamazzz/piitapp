@@ -19,7 +19,7 @@ export const creditsData = [
     subject: 'Пи',
     height: 1,
     isConfirmed: false,
-  },
+  }
 ];
 
 export const mark = () => {

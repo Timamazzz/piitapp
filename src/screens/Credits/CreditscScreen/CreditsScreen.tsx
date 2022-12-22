@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {Image, KeyboardAvoidingView, Text, TouchableOpacity, View} from 'react-native';
 import CreditsList from '../../../components/Project/CreditsList/CreditsList';
 import {
   globalStyles,
@@ -14,6 +14,7 @@ import {creditsData, mark} from '../../../constants/database';
 import {ICredit} from '../../../constants/types';
 import RadioButtonsGroup from '../../../components/Project/Radio/RadioButtonsGroup/RadioButtonsGroup';
 import {RadioButtonProps} from '../../../components/Project/Radio/types';
+import { TextInput } from 'react-native-gesture-handler';
 
 const CreditsScreen = () => {
   const modalizeRef = useRef<Modalize>(null);
@@ -56,21 +57,33 @@ const CreditsScreen = () => {
     height: 1,
     isConfirmed: false,
   });
+
+  const [text, setText] = useState<string>('')
+  const [err, setErr] = useState<boolean>(false)
+
   const openModal = (credit: ICredit) => {
     setModalCredit(credit);
     console.log(credit);
     modalizeRef.current?.open();
   };
   const confirmCredit = () => {
-    /*    creditsData.map(element => {
-      if (element.id === modalCredit.id) {
-        element.isConfirmed = true;
-      }
-    });*/
+    if(text < '6'){
+      setErr(false)
+      creditsData.map((element:any) => {
+        if(element.id == modalCredit.id){
+          element.mark = text;
+          element.isConfirmed = true;
+          modalizeRef.current?.close();
+        }
+      });
+    } else {
+      setErr(true)
+    }
     console.log(radioButtons);
   };
   return (
-    <View style={globalStyles.flexOne}>
+    <KeyboardAvoidingView
+     style={globalStyles.flexOne}>
       <View style={styles.header}>
         <View>
           <View
@@ -98,11 +111,11 @@ const CreditsScreen = () => {
       <Modalize
         ref={modalizeRef}
         modalHeight={
-          modalCredit.isConfirmed ? SCREEN_HEIGHT * 0.3 : SCREEN_HEIGHT * 0.5
+          modalCredit.isConfirmed ? SCREEN_HEIGHT * 0.3 : SCREEN_HEIGHT * 0.7
         }
         modalStyle={{backgroundColor: colors.newWhite}}>
         {!modalCredit.isConfirmed ? (
-          <View style={{justifyContent: 'center', alignItems: 'center'}}>
+          <View style={{justifyContent: 'center', alignItems: 'center', paddingHorizontal: 20}}>
             <Text
               style={[
                 globalStyles.blackText,
@@ -111,13 +124,7 @@ const CreditsScreen = () => {
               ]}>
               {modalCredit.subject}
             </Text>
-            <RadioButtonsGroup
-              containerStyle={{
-                height: SCREEN_HEIGHT * 0.45 * 0.45,
-                marginTop: 15,
-              }}
-              radioButtons={radioButtons}
-            />
+              <TextInput value={text} onChangeText={(value:string)=>{setText(value)}} style={[!err?{borderColor: colors.green}:{borderColor: 'red'},{ borderWidth: 1, borderRadius: 5, width: '50%', color: colors.black, textAlign: 'center'}]}></TextInput>
             <TouchableOpacity onPress={() => confirmCredit()}>
               <Image
                 style={{
@@ -157,7 +164,7 @@ const CreditsScreen = () => {
           </View>
         )}
       </Modalize>
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 export default CreditsScreen;
